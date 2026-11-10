@@ -5,6 +5,8 @@ Starter for a new project built by the JSM HQ agent team on VM 400, with the [js
 What it holds:
 - `.claude/skills/` and `skills-lock.json`: the jsm skills (scope, architect, audit, develop, check, test, document, sync, debug), vendored so every agent has the same version. Refresh with `npx skills add jsmastery-pro/skills -a claude-code -y`.
 - `ROLE.md`: how the team works (order of work, questions to Toyin through Slack, Mobbin for UI, PR proof, retries, lead merges, security). JSM HQ loads it into every agent's role.
+- `.claude/skills/agent-browser/` and `scripts/agent-browser-setup.sh`: Vercel's agent-browser for checking the running app and capturing PR proof. Each agent runs the setup script once per sandbox. It needs the sandbox network rules for `googlechromelabs.github.io` and `storage.googleapis.com`, which are already allowed globally on VM 400 (`sbx policy allow network <host>`).
+- `scripts/pr-proof.sh`: publishes proof screenshots and videos to the `pr-assets` branch and prints the Markdown for the PR.
 - `.coderabbit.yaml`: CodeRabbit review, skipping the vendored skills.
 - No `AGENTS.md` or `CLAUDE.md` on purpose: `/audit` writes root `AGENTS.md` and its `CLAUDE.md` pointer once the stack is scaffolded, after asking the coding standards. Nested ones come from `/audit` and `/sync`.
 
