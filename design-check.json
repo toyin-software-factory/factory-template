@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "name": "home",
+      "design": "docs/design/home.tagged.html",
+      "build": "http://localhost:3000/"
+    },
+    {
+      "name": "pricing-v2",
+      "design": "docs/design/pricing-v2.tagged.html",
+      "build": "http://localhost:3000/pricing"
+    }
+  ],
+  "viewports": [
+    "desktop",
+    "phone"
+  ],
+  "watch": [
+    "src"
+  ],
+  "judge": {
+    "type": "jev"
+  }
+}
